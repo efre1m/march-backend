@@ -6,9 +6,13 @@ export default ({
   connection: {
     client: "postgres",
     connection: {
-      connectionString: env("DATABASE_URL"),
+      host: env("DATABASE_HOST"),
+      port: parseInt(env("DATABASE_PORT")), // Fixed: Convert string to number
+      database: env("DATABASE_NAME"),
+      user: env("DATABASE_USERNAME"),
+      password: env("DATABASE_PASSWORD"),
       ssl: {
-        rejectUnauthorized: false, // Render requires this for Postgres SSL
+        rejectUnauthorized: false,
       },
     },
     pool: {
