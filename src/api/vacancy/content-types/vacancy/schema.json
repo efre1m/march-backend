@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vacancies",
+  "info": {
+    "singularName": "vacancy",
+    "pluralName": "vacancies",
+    "displayName": "vacancy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "department": {
+      "type": "string",
+      "required": true
+    },
+    "jobType": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Full-Time",
+      "enum": [
+        "Full-Time",
+        "Part-Time",
+        "Contract"
+      ]
+    },
+    "postedAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "deadline": {
+      "type": "datetime",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "applications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::application.application",
+      "mappedBy": "vacancy"
+    },
+    "requiredCandidates": {
+      "type": "integer",
+      "default": 1
+    },
+    "vacancyStatus": {
+      "type": "enumeration",
+      "required": true,
+      "default": "opened",
+      "enum": [
+        "opened",
+        "closed"
+      ]
+    }
+  }
+}
