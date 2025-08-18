@@ -20,11 +20,11 @@
       "required": true
     },
     "address": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "maplink": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

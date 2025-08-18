@@ -424,7 +424,7 @@ export interface ApiContactInfoContactInfo extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    address: Schema.Attribute.String & Schema.Attribute.Required;
+    address: Schema.Attribute.Text & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -435,7 +435,7 @@ export interface ApiContactInfoContactInfo extends Struct.CollectionTypeSchema {
       'api::contact-info.contact-info'
     > &
       Schema.Attribute.Private;
-    maplink: Schema.Attribute.String;
+    maplink: Schema.Attribute.Text;
     phone: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
